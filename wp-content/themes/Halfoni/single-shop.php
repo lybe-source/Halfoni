@@ -192,7 +192,7 @@
                     <input type="reset" class="btn__reset">
                 </div>
                 <div class="delivery__costs">
-                    Cet article comprend des frais de port d'une valeur minimum de 5 €
+                        Cet article comprend des frais de port d'une valeur minimum de <span><?php the_field('delivery_costs'); ?> €</span>
                 </div>
             </div>
         </div>
