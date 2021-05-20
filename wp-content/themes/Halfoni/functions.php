@@ -25,10 +25,6 @@ function hafloni_document_title_parts($title) {
 
 
 function halfoni_register_assets() {
-    wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', [], 1.2);
-    
-    wp_register_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', ['popper', 'jquery'], false, true);
-    wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', [], false, true);
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', [], false, true);
 
@@ -36,9 +32,8 @@ function halfoni_register_assets() {
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
 
-    wp_enqueue_script('nav-responsive', get_template_directory_uri() . '/assets/js/nav-responsive.js', ['font-awesome'], '1.0', true);
+    //wp_enqueue_script('nav-responsive', get_template_directory_uri() . '/assets/js/nav-responsive.js', ['font-awesome'], '1.0', true);
     wp_enqueue_script('font-awesome', 'https://kit.fontawesome.com/de3b210da5.js', [], false, true);
-    //wp_enqueue_script('halfoni_nav_link', esc_url(get_template_directory_uri() . '/assets/js/add_link_twitch.js'), [], false, true);
 }
 
 function halfoni__register_custom_post_type() {
