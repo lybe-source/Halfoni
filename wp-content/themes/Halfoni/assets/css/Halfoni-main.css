@@ -375,7 +375,7 @@ body {
     color: #fff;
     grid-area: other__choice;
     margin-bottom: .5em;
-    width: 1065px;
+    width: 100%;
 }
 
 .shop__single .choice__motif.grid .motif__choice.grid {
@@ -521,6 +521,7 @@ body {
 
     .shop__single .choice__motif.grid .other__options {
         flex-direction: column;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
@@ -529,6 +530,31 @@ body {
     .shop__single .choice__motif.grid .other__options .info {
         width: 100%;
         margin-bottom: .5em;
+    }
+    
+}
+
+@media screen and (max-width: 860px) {
+
+    .shop__single .choice__motif.grid .other__choice,
+    .shop__single .choice__motif.grid .support__title {
+        font-size: 1em;
+    }
+    
+}
+
+@media screen and (max-width: 830px) {
+
+    .shop__single .choice__motif.grid .other__options {
+        width: 720px;
+    }
+    
+}
+
+@media screen and (max-width: 780px) {
+
+    .shop__single .choice__motif.grid .motif__choice.grid {
+        grid-template-columns: repeat(1, 318px);
     }
     
 }
