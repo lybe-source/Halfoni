@@ -3,132 +3,127 @@
 <div class="shop__single">
     <h1 class="single__title">Shop de <?php the_title(); ?></h1>
 
-    <form action="" method="post">
+    <form action="" method="post" class="choice__motif grid">
 
-        <div class="choice__motif grid">
+        <div class="other__choice">
+            <span>Veuillez choisir un thème OU cochez :</span>
+            <input type="radio" id="other_motif" name="choice">
+            <label for="other_motif">Autre motif +10000 Cookies</label>
+        </div>
 
-            <div class="other__choice">
-                <span>Veuillez choisir un thème OU cochez :</span>
-                <input type="radio" id="other_motif" name="choice">
-                <label for="other_motif">Autre motif +10000 Cookies</label>
-            </div>
+        <div class="motif__choice grid">
 
-            <div class="motif__choice grid">
+            <?php if(have_rows('motif_object')): while(have_rows('motif_object')): the_row(); ?>
 
-                <?php if(have_rows('motif_object')): while(have_rows('motif_object')): the_row(); ?>
-
-                    <?php //var_dump(get_field('motif_object')); ?>
+                <?php //var_dump(get_field('motif_object')); ?>
             
-                    <?php if(!empty(get_sub_field('motif1'))): $motif1 = get_sub_field('motif1'); ?>
-                        <input type="radio" id="<?php echo esc_url($motif1['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif1['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif1['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif1['title']); ?>">
-                        </label>
+                <?php if(!empty(get_sub_field('motif1'))): $motif1 = get_sub_field('motif1'); ?>
+                    <input type="radio" id="<?php echo esc_url($motif1['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif1['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif1['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif1['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif2'))): $motif2 = get_sub_field('motif2'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif2'))): $motif2 = get_sub_field('motif2'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif2['title']); ?>" name="choice" value=""> 
-                        <label for="<?php echo esc_url($motif2['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif2['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif2['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif2['title']); ?>" name="choice" value=""> 
+                    <label for="<?php echo esc_url($motif2['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif2['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif2['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif3'))): $motif3 = get_sub_field('motif3'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif3'))): $motif3 = get_sub_field('motif3'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif3['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif3['title']); ?>" class="label__choice_motif">    
-                            <img src="<?php echo esc_url($motif3['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif3['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif3['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif3['title']); ?>" class="label__choice_motif">    
+                        <img src="<?php echo esc_url($motif3['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif3['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif4'))): $motif4 = get_sub_field('motif4'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif4'))): $motif4 = get_sub_field('motif4'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif4['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif4['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif4['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif4['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif4['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif4['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif4['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif4['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif5'))): $motif5 = get_sub_field('motif5'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif5'))): $motif5 = get_sub_field('motif5'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif5['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif5['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif5['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif5['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif5['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif5['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif5['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif5['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif6'))): $motif6 = get_sub_field('motif6'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif6'))): $motif6 = get_sub_field('motif6'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif6['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif6['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif6['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif6['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif6['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif6['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif6['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif6['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif7'))): $motif7 = get_sub_field('motif7'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif7'))): $motif7 = get_sub_field('motif7'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif7['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif7['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif7['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif7['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif7['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif7['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif7['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif7['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif8'))): $motif8 = get_sub_field('motif8'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif8'))): $motif8 = get_sub_field('motif8'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif8['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif8['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif8['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif8['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif8['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif8['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif8['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif8['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif9'))): $motif9 = get_sub_field('motif9'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif9'))): $motif9 = get_sub_field('motif9'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif9['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif9['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif9['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif9['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif9['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif9['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif9['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif9['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif10'))): $motif10 = get_sub_field('motif10'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif10'))): $motif10 = get_sub_field('motif10'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif10['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif10['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif10['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif10['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif10['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif10['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif10['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif10['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif11'))): $motif11 = get_sub_field('motif11'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif11'))): $motif11 = get_sub_field('motif11'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif11['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif11['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif11['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif11['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif11['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif11['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif11['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif11['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif12'))): $motif12 = get_sub_field('motif12'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif12'))): $motif12 = get_sub_field('motif12'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif12['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif12['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif12['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif12['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif12['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif12['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif12['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif12['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif13'))): $motif13 = get_sub_field('motif13'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif13'))): $motif13 = get_sub_field('motif13'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif13['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif13['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif13['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif13['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif13['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif13['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif13['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif13['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif14'))): $motif14 = get_sub_field('motif14'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif14'))): $motif14 = get_sub_field('motif14'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif14['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif14['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif14['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif14['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif14['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif14['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif14['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif14['title']); ?>">
+                    </label>
 
-                        <?php endif; if(!empty(get_sub_field('motif15'))): $motif15 = get_sub_field('motif15'); ?>
+                    <?php endif; if(!empty(get_sub_field('motif15'))): $motif15 = get_sub_field('motif15'); ?>
 
-                        <input type="radio" id="<?php echo esc_url($motif15['title']); ?>" name="choice" value="">
-                        <label for="<?php echo esc_url($motif15['title']); ?>" class="label__choice_motif">
-                            <img src="<?php echo esc_url($motif15['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif15['title']); ?>">
-                        </label>
+                    <input type="radio" id="<?php echo esc_url($motif15['title']); ?>" name="choice" value="">
+                    <label for="<?php echo esc_url($motif15['title']); ?>" class="label__choice_motif">
+                        <img src="<?php echo esc_url($motif15['sizes']['card-header']); ?>" alt="<?php echo esc_url($motif15['title']); ?>">
+                    </label>
 
-                        <?php endif; ?>
+                <?php endif; ?>
 
-                <?php endwhile; endif; ?>
-
-            </div>
-            
+            <?php endwhile; endif; ?>
 
         </div>
 
