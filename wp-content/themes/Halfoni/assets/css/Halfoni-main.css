@@ -435,22 +435,25 @@ body {
     display: flex;
     font-size: 2rem;
     color: #fff;
-    grid-area: other__options;
     margin-top: .5em;
-    margin-bottom: .5em;
-    width: 100%;
+    margin-left: .5em;
+    margin-right: .5em;
     justify-content: space-between;
+    padding: .5em;
+    width: 100%;
+    grid-area: other__options;
 }
 
 .shop__single .other__options .info {
-    max-width: 950px;
+    max-width: 70%;
     font-size: .5em;
+    margin-right: .5em;
 }
 
-.shop__single .buttons {
+.shop__single .other__options .other__infos .buttons {
     display: flex;
     flex-direction: row;
-    width: 550px;
+    width: 100%;
     margin-bottom: .5em;
     justify-content: space-between;
 }
@@ -492,10 +495,6 @@ body {
     .shop__single .choice__motif.grid .motif__choice.grid {
         grid-template-columns: repeat(3, 318px);
     }
-
-    .shop__single .choice__motif.grid .other__options .info {
-        width: 500px;
-    }
     
 }
 
@@ -518,17 +517,20 @@ body {
     .shop__single .choice__motif.grid .support__title {
         font-size: 1.5em;
     }
+    
+}
 
-    .shop__single .choice__motif.grid .other__options {
+@media screen and (max-width: 900px) {
+
+    .shop__single .other__options {
         flex-direction: column;
-        max-width: 800px;
+        max-width: 80%;
         margin-left: auto;
         margin-right: auto;
-        justify-content: center;
     }
 
-    .shop__single .choice__motif.grid .other__options .info {
-        width: 100%;
+    .shop__single .other__options .info {
+        max-width: 100%;
         margin-bottom: .5em;
     }
     
@@ -543,18 +545,31 @@ body {
     
 }
 
-@media screen and (max-width: 830px) {
-
-    .shop__single .choice__motif.grid .other__options {
-        width: 720px;
-    }
-    
-}
-
 @media screen and (max-width: 780px) {
 
     .shop__single .choice__motif.grid .motif__choice.grid {
         grid-template-columns: repeat(1, 318px);
+    }
+    
+}
+
+@media screen and (max-width: 665px) {
+
+    .shop__single .choice__motif.grid .choice__support.grid {
+        grid-template-columns: repeat(1, 200px);
+    }
+    
+}
+
+@media screen and (max-width: 620px) {
+
+    .shop__single .other__options .other__infos .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shop__single .other__options .other__infos .buttons input[type="submit"] {
+        margin-bottom: .5em;
     }
     
 }

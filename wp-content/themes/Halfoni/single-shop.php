@@ -183,8 +183,8 @@
 
             <div class="other__infos">
                 <div class="buttons">
-                    <input type="submit" value="Envoyer ma commande" class="btn__submit">
-                    <input type="reset" class="btn__reset">
+                    <input type="submit" value="Envoyer ma commande" class="btn__submit" id="js-submit-btn">
+                    <input type="reset" class="btn__reset" id="js-reset-btn">
                 </div>
                 <div class="delivery__costs">
                         Cet article comprend des frais de port d'une valeur minimum de <span><?php the_field('delivery_costs'); ?> €</span>
