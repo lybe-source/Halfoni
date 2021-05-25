@@ -395,6 +395,7 @@ body {
     gap: 1em;
     grid-area: choice__support;
     width: 100%;
+    justify-content: center;
 }
 
 .shop__single .choice__motif.grid .motif__choice.grid label[class="label__choice_motif"],
